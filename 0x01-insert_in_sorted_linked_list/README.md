@@ -1,34 +1,40 @@
-0x01. Insert in sorted linked list
- By Carrie Ybay, Software Engineer at Holberton School
- Weight: 1
- Ongoing project - started 12-13-2021, must end by 12-17-2021 (in 2 days) - you're done with 0% of tasks.
- Checker will be released at 12-15-2021 12:00 AM
- QA review fully automated.
-Requirements
-General
-Allowed editors: vi, vim, emacs
-All your files will be compiled on Ubuntu 14.04 LTS
-Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
-All your files should end with a new line
-Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-You are not allowed to use global variables
-No more than 5 functions per file
-In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
-The prototypes of all your functions should be included in your header file called lists.h
-A README.md file, at the root of the folder of the project, is mandatory
-Don’t forget to push your header file
-All your header files should be include guarded
-Tasks
-0. Insert in sorted linked list
-mandatory
-Technical interview preparation:
+# 0x01. Insert in sorted linked list
 
-You are not allowed to google anything
-Whiteboard first
+-   By Carrie Ybay, Software Engineer at Holberton School
+
+## Requirements
+
+### General
+
+-   Allowed editors:  `vi`,  `vim`,  `emacs`
+-   All your files will be compiled on Ubuntu 14.04 LTS
+-   Your programs and functions will be compiled with  `gcc 4.8.4`  using the flags  `-Wall`  `-Werror`  `-Wextra`  `and -pedantic`
+-   All your files should end with a new line
+-   Your code should use the  `Betty`  style. It will be checked using  [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl "betty-style.pl")  and  [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl "betty-doc.pl")
+-   You are not allowed to use global variables
+-   No more than 5 functions per file
+-   In the following examples, the  `main.c`  files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own  `main.c`  files at compilation. Our  `main.c`  files might be different from the one shown in the examples
+-   The prototypes of all your functions should be included in your header file called  `lists.h`
+-   A  `README.md`  file, at the root of the folder of the project, is mandatory
+-   Don’t forget to push your header file
+-   All your header files should be include guarded
+
+## Tasks
+
+### 0. Insert in sorted linked list
+
+
+**Technical interview preparation**:
+
+-   You are not allowed to google anything
+-   Whiteboard first
+
 Write a function in C that inserts a number into a sorted singly linked list.
 
-Prototype: listint_t *insert_node(listint_t **head, int number);
-Return: the address of the new node, or NULL if it failed
+-   Prototype:  `listint_t *insert_node(listint_t **head, int number);`
+-   Return: the address of the new node, or  `NULL`  if it failed
+
+```
 carrie@ubuntu:0x01$ cat lists.h 
 #ifndef LISTS_H
 #define LISTS_H
@@ -56,6 +62,10 @@ void free_listint(listint_t *head);
 listint_t *insert_node(listint_t **head, int number);
 
 #endif /* LISTS_H */
+
+```
+
+```
 carrie@ubuntu:0x01$ cat linked_lists.c 
 #include <stdio.h>
 #include <stdlib.h>
@@ -131,6 +141,10 @@ void free_listint(listint_t *head)
         free(current);
     }
 }
+
+```
+
+```
 carrie@ubuntu:0x01$ cat 0-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -167,6 +181,10 @@ int main(void)
 
     return (0);
 }
+
+```
+
+```
 carrie@ubuntu:0x01$ gcc -Wall -Werror -Wextra -pedantic 0-main.c linked_lists.c 0-insert_number.c -o insert
 carrie@ubuntu:0x01$ ./insert
 0
@@ -188,8 +206,11 @@ carrie@ubuntu:0x01$ ./insert
 402
 1024
 carrie@ubuntu:0x01$  
-Repo:
 
-GitHub repository: holbertonschool-interview
-Directory: 0x01-insert_in_sorted_linked_list
-File: 0-insert_number.c, lists.h
+```
+
+**Repo:**
+
+-   GitHub repository:  `holbertonschool-interview`
+-   Directory:  `0x01-insert_in_sorted_linked_list`
+-   File:  `0-insert_number.c, lists.h`
