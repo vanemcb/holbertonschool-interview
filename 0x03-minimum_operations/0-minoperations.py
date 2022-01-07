@@ -3,6 +3,7 @@
 Method minOperations
 """
 
+
 def minOperations(n):
 
     if type(n) is not int or n <= 0:
