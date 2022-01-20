@@ -161,7 +161,7 @@ int grid1[3][3] = {
         {3, 3, 3}
     };
 alex@~/0x04-sandpiles$ gcc -Wall -Wextra -Werror -pedantic 1-main.c 0-sandpiles.c -o 0-sandpiles
-alex@~/0x04-sandpiles$ ./0-sandpiles 
+alex@~/0x04-sandpiles$ ./0-sandpiles
 0 0 0   3 3 3
 0 0 0 + 3 3 3
 0 0 0   3 3 3
