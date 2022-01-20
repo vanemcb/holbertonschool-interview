@@ -12,7 +12,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	/* Topple piles accordingly when grid is unstable and print each time */
 	while (!is_stable(grid1))
 	{
-		// print_grid(grid1);
+		/*print_grid(grid1);*/
 		topple(grid1, grid2);
 	}
 }
@@ -25,6 +25,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 int is_stable(int grid[3][3])
 {
 	int row, col;
+
 	for (row = 0; row < 3; row++)
 	{
 		for (col = 0; col < 3; col++)
@@ -47,6 +48,7 @@ int is_stable(int grid[3][3])
 void topple(int grid1[3][3], int grid2[3][3])
 {
 	int row, col;
+
 	for (row = 0; row < 3; row++)
 	{
 		for (col = 0; col < 3; col++)
@@ -90,6 +92,7 @@ void topple(int grid1[3][3], int grid2[3][3])
 void add_sandpile(int grid1[3][3], int grid2[3][3])
 {
 	int row, col;
+
 	for (row = 0; row < 3; row++)
 	{
 		for (col = 0; col < 3; col++)
