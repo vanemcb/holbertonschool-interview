@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Script that reads stdin line by line and computes metrics """
-import fileinput
+import sys
 
 cont = 0
 cont_size = 0
@@ -27,8 +27,9 @@ def dict_status(status_code):
         status["500"] += 1
 
 try:
-    for line in fileinput.input():
+    for line in sys.stdin:
         cont += 1
+        print(line)
         array_line = line.split(' ')
         status_code = array_line[7]
         dict_status(status_code)
