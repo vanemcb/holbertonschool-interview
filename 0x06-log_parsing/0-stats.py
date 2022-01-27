@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" cript that reads stdin line by line and computes metrics """
+""" Script that reads stdin line by line and computes metrics """
 import fileinput
 
 cont = 0
@@ -26,20 +26,29 @@ def dict_status(status_code):
     elif status_code == "500":
         status["500"] += 1
 
-for line in fileinput.input():
-    cont += 1
-    array_line = line.split(' ')
-    status_code = array_line[7]
-    dict_status(status_code)
-    size = int(array_line[8][0:-1])
-    cont_size += size
-    if cont == 10:
-        print("File size:", cont_size)
+try:
+    for line in fileinput.input():
+        cont += 1
+        array_line = line.split(' ')
+        status_code = array_line[7]
+        dict_status(status_code)
+        size = int(array_line[8][0:-1])
+        cont_size += size
 
-        for k, v in status.items():
-            if v != 0:
-                print(k + ":", v)
-            status[k] = 0
+        if cont == 10:
+            print("File size:", cont_size)
 
-        cont = 0
-        cont_size = 0
+            for k, v in status.items():
+                if v != 0:
+                    print(k + ":", v)
+                status[k] = 0
+
+            cont = 0
+            cont_size = 0
+
+except KeyboardInterrupt:
+    print("File size:", cont_size)
+
+    for k, v in status.items():
+        if v != 0:
+            print(k + ":", v)
