@@ -29,7 +29,6 @@ def dict_status(status_code):
 try:
     for line in sys.stdin:
         cont += 1
-        print(line)
         array_line = line.split(' ')
         status_code = array_line[7]
         dict_status(status_code)
