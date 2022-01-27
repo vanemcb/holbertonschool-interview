@@ -36,19 +36,19 @@ try:
         cont_size += size
 
         if cont == 10:
-            print("File size:", cont_size)
+            print("File size: {}".format(cont_size))
 
             for k, v in status.items():
                 if v != 0:
-                    print(k + ":", v)
+                    print("{}: {}".format(k, v))
                 status[k] = 0
 
             cont = 0
             cont_size = 0
 
 except KeyboardInterrupt:
-    print("File size:", cont_size)
+    print("File size: {}".format(cont_size))
 
     for k, v in status.items():
         if v != 0:
-            print(k + ":", v)
+            print("{}: {}".format(k, v))
