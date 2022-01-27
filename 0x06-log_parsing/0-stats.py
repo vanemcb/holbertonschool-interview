@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" cript that reads stdin line by line and computes metrics """
 import fileinput
 
 cont = 0
