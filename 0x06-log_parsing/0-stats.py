@@ -7,6 +7,7 @@ cont_size = 0
 status = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0,
                     "405": 0, "500": 0}
 
+
 def dict_status(status_code):
     if status_code == "200":
         status["200"] += 1
@@ -35,7 +36,7 @@ for line in fileinput.input():
     if cont == 10:
         print("File size:", cont_size)
 
-        for k,v in status.items():
+        for k, v in status.items():
             if v != 0:
                 print(k + ":", v)
             status[k] = 0
