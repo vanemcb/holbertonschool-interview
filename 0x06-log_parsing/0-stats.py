@@ -52,3 +52,5 @@ except KeyboardInterrupt:
     for k, v in status.items():
         if v != 0:
             print("{}: {}".format(k, v))
+
+    raise
