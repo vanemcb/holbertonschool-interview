@@ -26,31 +26,33 @@ def dict_status(status_code):
     elif status_code == "500":
         status["500"] += 1
 
-try:
-    for line in sys.stdin:
-        cont += 1
-        array_line = line.split(' ')
-        status_code = array_line[7]
-        dict_status(status_code)
-        size = int(array_line[8][0:-1])
-        cont_size += size
 
-        if cont == 10:
-            print("File size: {}".format(cont_size))
+if __name__ == '__main__':
+    try:
+        for line in sys.stdin:
+            cont += 1
+            array_line = line.split(' ')
+            status_code = array_line[7]
+            dict_status(status_code)
+            size = int(array_line[8][0:-1])
+            cont_size += size
 
-            for k, v in status.items():
-                if v != 0:
-                    print("{}: {}".format(k, v))
-                status[k] = 0
+            if cont == 10:
+                print("File size: {}".format(cont_size))
 
-            cont = 0
-            cont_size = 0
+                for k, v in status.items():
+                    if v != 0:
+                        print("{}: {}".format(k, v))
+                    status[k] = 0
 
-except KeyboardInterrupt:
-    print("File size: {}".format(cont_size))
+                cont = 0
+                cont_size = 0
 
-    for k, v in status.items():
-        if v != 0:
-            print("{}: {}".format(k, v))
+    except KeyboardInterrupt:
+        print("File size: {}".format(cont_size))
 
-    raise
+        for k, v in status.items():
+            if v != 0:
+                print("{}: {}".format(k, v))
+
+        raise
