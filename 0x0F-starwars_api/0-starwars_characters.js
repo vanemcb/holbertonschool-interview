@@ -14,7 +14,7 @@ if (myArgs.length !== 1) {
 
 const movieNum = myArgs[0];
 
-async function main() {
+async function main () {
   const rawData = await request(`https://swapi-api.hbtn.io/api/films/${movieNum}/`);
 
   const data = JSON.parse(rawData.body);
